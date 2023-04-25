@@ -4,6 +4,8 @@ multicolorcaptcha
 faker
 ffmpeg
 humanize
+odmantic
+loguru
 wget==3.2
 secureme==0.0.4
 cowpy
