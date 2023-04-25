@@ -121,7 +121,6 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL")
-    DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
@@ -130,7 +129,7 @@ if ENV:
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))
     WORKERS = int(os.environ.get("WORKERS", 8))
     BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
-    ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
+    ALLOW_EXCL = os.environ.get("ALLOW_EXCL", True)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
@@ -236,7 +235,7 @@ else:
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
     BOT_NAME = Config.BOT_NAME
     ARQ_API_URL = "arq.hamker.dev"
-    ARQ_API_KEY = "UMPYGF-MVNLVW-RTNXKA-FJWOUH-ARQ"
+    ARQ_API_KEY = "HOYQOV-EYTKTC-RLELMG-IPFLVH-ARQ"
 
     BOT_USERNAME = "Scarlet_Witchh_Bot"
     OPENWEATHERMAP_ID = "ca1f9caacbb92187db96c0bf5686017b"
@@ -249,9 +248,9 @@ else:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 
-DEV_USERS.add(5924088999)
+DEV_USERS.add(2033411815)
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
-REDIS_URL = "redis://default:6vsajwd6wq3lNI7T3zMIpltTrU040DJC@redis-19248.c16.us-east-1-3.ec2.cloud.redislabs.com:19248"
+REDIS_URL = "redis://xelcius:Xelcius~97@redis-11612.c240.us-east-1-3.ec2.cloud.redislabs.com:11612"
 
 try:
     REDIS.ping()
@@ -290,6 +289,8 @@ print(
     "[NEKOROBOT] Project Maintained By: github.com/Awesome-Prince (https://github.com/Awesome-Prince/NekoRobot-3)"
 )
 
+
+STRICT_GMUTE = "yes"
 mongodb = MongoClient(MONGO_DB_URI, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI)
 db = motor[MONGO_DB]
